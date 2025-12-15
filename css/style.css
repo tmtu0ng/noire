@@ -14,6 +14,8 @@ body {
   background:#F3E9E9;
   color: #fff; }
 
+
+
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -2738,6 +2740,36 @@ a {color: #F86872}
     transform: rotate(0deg) translateY(-4px);
 }
 
+@media (max-width: 768px) {
+    .pill-stack {
+        gap: 18px;
+    }
 
+    .pill {
+        font-size: 14px;
+        padding: 14px 20px;
+    }
+}
 
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.create-section {
+    position: relative;
+    z-index: 1;
+}
+
+.create-section::before {
+    z-index: 0;
+}
+.create-section::before {
+    pointer-events: none;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
