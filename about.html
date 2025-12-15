@@ -31,20 +31,26 @@
 
 <body>
 <header class="  py-0" role="banner" >
-
       <div class="container-fluid site-navbar transparent ">
         <div class="row align-items-center navbar">
 
           <div class="col-6 col-xl-2 " data-aos="fade-down" >
    <h1 class="mb-0"><a href="index.html" class="text-dark h2 mb-0">noiré&nbsp;&nbsp;</a></h1>
           </div>
+			<!-- MOBILE MENU TOGGLE (CHỈ HIỆN MOBILE) -->
+<div class="col-6 d-xl-none text-right" data-aos="fade-down">
+  <button class="mobile-menu-toggle" aria-label="Open menu">
+    ☰
+  </button>
+</div>
+
           <div class="col-10 col-md-8 d-none d-xl-block " data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center  " role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block  ">
                 <li class="active"><a href="index.html">home</a></li>
                 <li class="has-children">
-                  <a href="single.html">shop</a>
+                  <a href="Shop.html.html">shop</a>
                   <ul class="dropdown">
                     <li><a href="New Arrival.html.html">new arrivals</a></li>
                     <li><a href="Best Item.html.html">best items</a></li>
@@ -267,6 +273,16 @@ slider.addEventListener("mouseleave", () => {
       navbar.classList.remove("scrolled");
     }
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function () {
+    document.body.classList.toggle('offcanvas-menu');
+  });
+});
 </script>
 
   <script src="js/jquery-3.3.1.min.js"></script>

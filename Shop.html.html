@@ -54,13 +54,19 @@
 </head>
 <body>
 <header class="  py-0" role="banner" >
-
       <div class="container-fluid site-navbar transparent ">
         <div class="row align-items-center navbar">
 
           <div class="col-6 col-xl-2 " data-aos="fade-down" >
    <h1 class="mb-0"><a href="index.html" class="text-dark h2 mb-0">noiré&nbsp;&nbsp;</a></h1>
           </div>
+			<!-- MOBILE MENU TOGGLE (CHỈ HIỆN MOBILE) -->
+<div class="col-6 d-xl-none text-right" data-aos="fade-down">
+  <button class="mobile-menu-toggle" aria-label="Open menu">
+    ☰
+  </button>
+</div>
+
           <div class="col-10 col-md-8 d-none d-xl-block " data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center  " role="navigation">
 
@@ -248,7 +254,18 @@
       </div>
     </div> 
 		
-		
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function () {
+    document.body.classList.toggle('offcanvas-menu');
+  });
+});
+</script>
+
+	
 		
 	<script>
   window.addEventListener("scroll", function() {
@@ -260,6 +277,7 @@
     }
   });
 </script>
+
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
