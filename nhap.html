@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	
+	
+	<!-- ABOUT NOIRÉ LAYOUT  – drop this block into your About page -->
+<style>
+  /* ========= NOIRÉ ABOUT LAYOUT (SCOPED) ========= */
+  .noire-about {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Pretendard",
+      "Noto Sans KR", sans-serif;
+    background: #0f0f10;
+    padding: 40px 16px 80px;
+    display: flex;
+    justify-content: center;
+    color: #050505;
+  }
+
+  .noire-about * {
+    box-sizing: border-box;
+  }
+
+  .noire-about__frame {
+    width: 100%;
+    max-width: 960px;
+    background: #f5f0ea;
+    border-radius: 24px;
+    padding: 32px 28px 40px; 
+    position: relative;
+    overflow: hidden;
+  }
+
+  .noire-about__badge {
+    position: absolute;
+    left: 24px;
+    top: 18px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.55);
+  }
+
+  .noire-about__logo {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(10, 10, 10, 0.5);
+  }
+
+  .noire-about__section {
+    margin-top: 32px;
+  }
+
+  .noire-about__title-main {
+    font-size: 32px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .noire-about__subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(7, 7, 7, 0.7);
+    max-width: 520px;
+  }
+
+  /* ==== TOP CARDS: BRAND DNA ==== */
+  .noire-about__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .noire-card {
+    border-radius: 20px;
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  }
+
+  .noire-card--left {
+    background: radial-gradient(circle at 0% 0%, #fbe3ff 0, #fce0f0 30%, #ffe8db 70%, #f0f0ff 100%);
+  }
+
+  .noire-card--right {
+    background: radial-gradient(circle at 100% 0%, #f6ffcc 0, #d9ffc4 35%, #e3ffe8 70%, #f0fff6 100%);
+  }
+
+  .noire-card__label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .noire-card__label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  .noire-card__index {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .noire-card__headline {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .noire-card__text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .noire-card__bottom {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .noire-card__tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  .noire-card__cta {
+    padding: 9px 18px;
+    border-radius: 999px;
+    border: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    background: #050505;
+    color: #f5f0ea;
+    cursor: pointer;
+  }
+
+  .noire-card__thumb {
+    width: 96px;
+    height: 96px;
+    border-radius: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .noire-card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ==== PROCESS / BRAND PILLARS ==== */
+  .noire-about__steps-block {
+    margin-top: 40px;
+  }
+
+  .noire-about__steps-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .noire-about__steps-sub {
+    font-size: 14px;
+    color: rgba(7, 7, 7, 0.7);
+    margin-bottom: 18px;
+  }
+
+  .noire-steps__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .noire-step-card {
+    background: rgba(255, 210, 236, 0.85);
+    border-radius: 18px;
+    padding: 14px 12px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .noire-step-card:nth-child(2) {
+    background: rgba(233, 231, 255, 0.95);
+  }
+
+  .noire-step-card:nth-child(3) {
+    background: rgba(222, 245, 255, 0.95);
+  }
+
+  .noire-step-card:nth-child(4) {
+    background: rgba(226, 255, 222, 0.95);
+  }
+
+  .noire-step-card__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .noire-step-card__step {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 11px;
+  }
+
+  .noire-step-card__icon {
+    font-size: 14px;
+  }
+
+  .noire-step-card__title {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .noire-step-card__text {
+    line-height: 1.5;
+    font-size: 11px;
+  }
+
+  /* ==== BRAND STATEMENT + HERO IMAGE ==== */
+  .noire-about__statement {
+    margin-top: 40px;
+    padding: 18px 18px 0;
+    border-radius: 22px;
+    background: #f5f0ea;
+  }
+
+  .noire-about__statement-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(7, 7, 7, 0.85);
+    margin-bottom: 16px;
+  }
+
+  .noire-about__statement-quote {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .noire-about__statement-cta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 8px;
+  }
+
+  .noire-about__statement-tagline {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .noire-about__statement-cta {
+    border-radius: 999px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: #050505;
+    color: #f5f0ea;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .noire-about__hero {
+    margin-top: 8px;
+    border-radius: 22px;
+    overflow: hidden;
+    max-height: 260px;
+  }
+
+  .noire-about__hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ==== RESPONSIVE ==== */
+  @media (max-width: 880px) {
+    .noire-about__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .noire-steps__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .noire-about__frame {
+      padding: 32px 18px 30px;
+      border-radius: 20px;
+    }
+    .noire-about__title-main {
+      font-size: 26px;
+    }
+    .noire-about__steps-title {
+      font-size: 20px;
+    }
+    .noire-steps__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .noire-card__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .noire-card__thumb {
+      width: 100%;
+      height: 160px;
+    }
+  }
+</style>
+</head>
+
+<body>
+	<section class="noire-about">
+  <div class="noire-about__frame">
+    <div class="noire-about__badge">web design · about</div>
+    <div class="noire-about__logo">noiré studio</div>
+
+    <!-- INTRO -->
+    <div class="noire-about__section">
+      <h1 class="noire-about__title-main">Noiré — a fashion statement born from contrast.</h1>
+      <p class="noire-about__subtitle">
+        Noire is a Korean-inspired label rooted in acubi aesthetics: bold yet subtle,
+        minimal yet expressive. We craft pieces for individuals who walk their journey
+        with quiet confidence.
+      </p>
+    </div>
+
+    <!-- BRAND DNA CARDS -->
+    <div class="noire-about__section noire-about__grid">
+      <article class="noire-card noire-card--left">
+        <div>
+          <div class="noire-card__label-row">
+            <div class="noire-card__label">Brand core</div>
+            <div class="noire-card__index">01</div>
+          </div>
+          <h2 class="noire-card__headline">Quiet confidence</h2>
+          <p class="noire-card__text">
+            Noiré is a fashion statement born from contrast — bold yet subtle,
+            minimal yet expressive. Each piece speaks without noise, designed for
+            those who choose depth over distraction.
+          </p>
+        </div>
+
+        <div class="noire-card__bottom">
+          <span class="noire-card__tag">attitude · language · identity</span>
+          <button class="noire-card__cta">discover noiré</button>
+        </div>
+      </article>
+
+      <article class="noire-card noire-card--right">
+        <div>
+          <div class="noire-card__label-row">
+            <div class="noire-card__label">Design code</div>
+            <div class="noire-card__index">02</div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div class="noire-card__thumb">
+              <!-- replace src with your own image -->
+              <img src="https://images.pexels.com/photos/7671166/pexels-photo-7671166.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Noiré outfit">
+            </div>
+            <div>
+              <h3 class="noire-card__headline" style="font-size:18px;margin-bottom:4px;">
+                Timeless acubi silhouettes
+              </h3>
+              <p class="noire-card__text">
+                At Noire, black is not just a color — it is an attitude. We embrace
+                sharp structures, modern utility and layering that translates personality
+                into form.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="noire-card__bottom">
+          <span class="noire-card__tag">minimal · expressive · functional</span>
+          <button class="noire-card__cta">view collection</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- PILLARS / PROCESS -->
+    <div class="noire-about__section noire-about__steps-block">
+      <h2 class="noire-about__steps-title">How Noiré designs for your everyday story</h2>
+      <p class="noire-about__steps-sub">
+        Every garment is built with intention — from fabric to finishing — so that
+        simplicity becomes striking and styling stays effortless.
+      </p>
+
+      <div class="noire-steps__grid">
+        <article class="noire-step-card">
+          <div class="noire-step-card__header">
+            <span class="noire-step-card__step">01 · contrast</span>
+            <span class="noire-step-card__icon">⟶</span>
+          </div>
+          <div>
+            <div class="noire-step-card__title">Concept</div>
+            <p class="noire-step-card__text">
+              Each drop starts with a contrast story — soft vs. sharp, matte vs. shine —
+              to create a clear visual mood.
+            </p>
+          </div>
+        </article>
+
+        <article class="noire-step-card">
+          <div class="noire-step-card__header">
+            <span class="noire-step-card__step">02 · silhouette</span>
+            <span class="noire-step-card__icon">⟶</span>
+          </div>
+          <div>
+            <div class="noire-step-card__title">Shape</div>
+            <p class="noire-step-card__text">
+              Timeless, slightly oversized acubi silhouettes that frame the body without
+              shouting for attention.
+            </p>
+          </div>
+        </article>
+
+        <article class="noire-step-card">
+          <div class="noire-step-card__header">
+            <span class="noire-step-card__step">03 · material</span>
+            <span class="noire-step-card__icon">⟶</span>
+          </div>
+          <div>
+            <div class="noire-step-card__title">Fabric</div>
+            <p class="noire-step-card__text">
+              Quality fabrics with structure and comfort so every piece can move from
+              daytime errands to midnight walks.
+            </p>
+          </div>
+        </article>
+
+        <article class="noire-step-card">
+          <div class="noire-step-card__header">
+            <span class="noire-step-card__step">04 · detail</span>
+            <span class="noire-step-card__icon">⟶</span>
+          </div>
+          <div>
+            <div class="noire-step-card__title">Finishing</div>
+            <p class="noire-step-card__text">
+              Signature seams, subtle hardware and thoughtful pockets — details that
+              you feel more than you see.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- STATEMENT + HERO -->
+    <div class="noire-about__section noire-about__statement">
+      <p class="noire-about__statement-text">
+        We believe fashion does not ask for attention; it earns it. Every design is
+        created with delicate balance, precise cut and refined craftsmanship, so that
+        each wearer can stand firm in their quiet power.
+      </p>
+
+      <p class="noire-about__statement-quote">
+        This is noiré — understated, elevated, defining presence without a word.
+      </p>
+
+      <div class="noire-about__statement-cta-row">
+        <div class="noire-about__statement-tagline">
+          Built for thinkers, creators &amp; night walkers.
+        </div>
+        <button class="noire-about__statement-cta">
+          explore the world of noiré
+        </button>
+      </div>
+
+      <div class="noire-about__hero">
+        <!-- replace src with your own hero banner (acubi / korean mood) -->
+        <img
+          src="https://images.pexels.com/photos/7671165/pexels-photo-7671165.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Noiré acubi mood hero"
+        />
+      </div>
+
+      <p class="noire-about__statement-text" style="margin-top:12px;">
+        With love, noiré.
+      </p>
+    </div>
+  </div>
+</section>
+
+	
+</body>
+</html>

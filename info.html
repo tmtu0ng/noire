@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noiré - Sherpa Cloud Jacket</title>
+	  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">    
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+			    padding-top: 90px
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER --- */
+       
+        	 
+
+
+
+
+   
+        /* --- MAIN PRODUCT SECTION --- */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            gap: 60px;     padding-top: 90px
+        }
+
+        /* Left Column: Image */
+        .product-image {
+            flex: 1;
+            background-color: #f9f9f9; /* Placeholder background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px; /* Chều cao tối thiểu để giữ khung khi chưa có ảnh */
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Right Column: Details */
+        .product-details {
+            flex: 1;
+            padding-top: 20px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .divider {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+       /* --- CẬP NHẬT CSS MỚI --- */
+        .cart-actions {
+            margin-top: 30px;
+        }
+
+        .quantity-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .qty-input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .subtotal {
+            font-size: 16px;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 18px;
+            background-color: white;
+            border: 1px solid #000;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Container để chứa nút PayPal và Icon trên cùng 1 hàng */
+        .payment-row {
+            display: flex;
+            align-items: center; /* Căn giữa theo chiều dọc */
+            gap: 15px; /* Khoảng cách giữa nút và icon */
+            margin-bottom: 40px;
+			width: 400px;
+        }
+
+        .paypal-btn {
+            flex: 1; /* Nút paypal tự giãn để lấp đầy chỗ trống */
+            padding: 10px;
+            background-color: #ffc439;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-style: italic;
+            color: #003087;
+            font-family: sans-serif;
+            font-size: 14px;
+            height: 40px; /* Cố định chiều cao cho đẹp */
+        }
+/* Thêm đoạn này vào trong thẻ <style> */
+.payment-methods img {
+    height: 25px; /* Chiều cao bằng với icon SVG bên cạnh */
+    width: auto;  /* Chiều rộng tự động theo tỉ lệ */
+}
+        .payment-methods {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-icon {
+            height: 24px; /* Chiều cao icon */
+            width: auto;
+            display: block;
+        }
+        .quantity-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .qty-input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .subtotal {
+            font-size: 16px;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 18px;
+            background-color: white;
+            border: 1px solid #000;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .btn-add-cart:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .paypal-btn {
+
+            width: 100%;
+            padding: 12px;
+            background-color: #ffc439;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-style: italic;
+            color: #003087;
+            font-family: sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .card-icon {
+            height: 25px;
+        }
+
+        /* Accordion / Links */
+        .info-links div {
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            header {
+                padding: 4px 8px;
+            }
+           
+        }
+		/* Fix khoảng cách header */
+body {
+    padding-top: 20px;
+}
+
+
+}
+    </style>
+</head>
+<body>
+
+    <header class="p-0" role="banner">
+
+     <div class="container-fluid site-navbar transparent ">
+        <div class="row align-items-center navbar">
+
+          <div class="col-6 col-xl-2 " data-aos="fade-down" >
+   <h1 class="mb-0"><a href="index.html" class="text-dark h2 mb-0">noiré&nbsp;&nbsp;</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block " data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center  " role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block  ">
+                <li class="active"><a href="index.html">home</a></li>
+                <li class="has-children">
+                  <a href="Shop.html.html">shop</a>
+                  <ul class="dropdown">
+                    <li><a href="New Arrival.html.html">new arrivals</a></li>
+                    <li><a href="Best Item.html.html">best items</a></li>
+                    <li><a href="Top.html.html">top</a></li>
+                    <li><a href="Outer.html.html">outer</a></li>
+                    <li><a href="Bottom.html.html">bottom</a></li>
+                    <li><a href="Dress.html.html">dress</a></li>
+                    <li><a href="Acc.html.html">accessories</a></li>
+                    
+                  </ul>
+                </li>
+                 <li><a href="about.html">about</a></li>
+            <li><a href="lookbook.html">lookbook</a></li>
+			<li><a href="Event.html.html">event</a></li>
+              </ul>
+            </nav>
+          </div>
+
+         <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+    <div class="d-none d-xl-inline-block">
+        <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            <li>
+                <a href="cart.html.html" class="pl-0 pr-3">
+                    <!-- SVG giỏ hàng -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="pl-3 pr-3">
+                    <!-- SVG user -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+      </div>
+      
+    </header>
+
+    <main>
+        <section class="product-image">
+            <img src="images/Director Francis Ford Coppola (780 x 1080 px).png" alt="SHERPA CLOUD JACKET MISTY PINK"> 
+        </section>
+
+        <section class="product-details">
+            <h1 class="product-title">SHERPA CLOUD JACKET MISTY PINK</h1>
+            <p class="product-price">$123.00</p>
+
+            <div class="product-description">
+                <p>Avant-garde dolman silhouette</p>
+                <p>Warm and cozy with sherpa outer and fleece-bonded lining</p>
+                <p>Vintage mood with knit accents on hood lining, cuffs, hem, and buttons</p>
+                <p>Star label on the back and flower-shaped inner button as a detail</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="cart-actions">
+                <div class="quantity-row">
+                    <input type="number" value="1" min="1" class="qty-input">
+                    <span class="subtotal">$123.00</span>
+                </div>
+
+               <a href="cart.html.html"><button class="btn-add-cart">ADD TO CART</button>
+                </a> 
+                <div class="payment-row">
+                    <button class="paypal-btn">
+                        Buy now with <span style="font-weight:bold; font-style:italic; margin-left:4px;">PayPal</span>
+                    </button>
+
+                    <div class="payment-methods">
+                        <img src="images/Visa.png">
+
+                        <svg class="card-icon" viewBox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle fill="#EB001B" cx="12" cy="12" r="12"/>
+                            <circle fill="#F79E1B" cx="24" cy="12" r="12"/>
+                            <path fill="#FF5F00" d="M18 19.6c-2.4-1.9-4-4.7-4-8s1.6-6.1 4-8c2.4 1.9 4 4.7 4 8s-1.6 6.1-4 8z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-links">
+                <div>Details</div>
+                <div>Size Guide</div>
+                <div>Shipping & Returns</div>
+            </div>
+        </section>
+    </main>
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".site-navbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+</body>
+</html>

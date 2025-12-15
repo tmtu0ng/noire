@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Noiré – Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">    
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* RESET NHẸ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      background: #f5f5f7;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* WRAPPER CHÍNH */
+    .page-wrapper {
+      ;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      padding: 20px 60px 60px;
+    }
+
+    
+
+    /* TITLE CART */
+    .cart-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    /* TABLE CART */
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    .cart-header-row {
+      border-bottom: 1px solid #eee;
+      color: #777;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .cart-header-row th {
+      padding: 10px 0;
+      font-weight: 400;
+    }
+
+    .cart-row {
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-row td {
+      padding: 20px 0;
+      vertical-align: middle;
+    }
+
+    .col-select {
+      width: 40px;
+      text-align: center;
+    }
+
+    .col-image {
+      width: 130px;
+    }
+
+    .product-img {
+      width: 110px;
+      height: 140px;
+      object-fit: cover;
+      background: #ddd;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .product-info {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .col-qty {
+      width: 120px;
+      text-align: center;
+    }
+
+    .qty-input {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+
+    .qty-input input {
+      width: 28px;
+      text-align: center;
+      border: 1px solid #aaa;
+      padding: 2px 0;
+      font-size: 12px;
+    }
+
+    .qty-input button {
+      width: 20px;
+      height: 18px;
+      border: 1px solid #aaa;
+      background: #fff;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .btn-small {
+      padding: 5px 18px;
+      border: 1px solid #111;
+      background: #fff;
+      font-size: 11px;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .btn-small:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .col-price,
+    .col-discount {
+      width: 120px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .col-actions {
+      width: 180px;
+      text-align: left;
+      font-size: 11px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 6px 16px;
+      border: 1px solid #111;
+      background: #fff;
+      text-transform: uppercase;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .btn-outline-danger {
+      border-color: #999;
+    }
+
+    /* NÚT DELETE DƯỚI CÙNG */
+    .delete-bottom-wrap {
+      margin: 20px 0 40px;
+    }
+
+    .btn-delete-bottom {
+      padding: 6px 25px;
+      border: 1px solid #999;
+      background: #fff;
+      font-size: 11px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-delete-bottom:hover {
+      background: #111;
+      color: #fff;
+      border-color: #111;
+    }
+
+    /* SUMMARY BÊN PHẢI */
+    .cart-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .summary {
+      margin-left: auto;
+      max-width: 340px;
+      font-size: 13px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .summary-label {
+      color: #777;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .summary-value {
+      font-size: 13px;
+    }
+
+    .summary-details-btn {
+      margin-left: 10px;
+      padding: 5px 16px;
+      border: 1px solid #111;
+      font-size: 11px;
+      background: #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .summary-details-btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .checkout-row {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-checkout,
+    .btn-checkout-selected {
+      flex: 1;
+      padding: 12px 10px;
+      border: 1px solid #111;
+      background: #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-checkout:hover,
+    .btn-checkout-selected:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .payment-btns {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .paypal-btn {
+      border: none;
+      background: #ffcb05; /* vàng Paypal */
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .paypal-btn span {
+      margin-left: 5px;
+    }
+
+    .stripe-btn {
+      border: none;
+      background: #111;
+      color: #fff;
+      padding: 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE NHẸ */
+    @media (max-width: 900px) {
+  
+      .cart-bottom {
+        flex-direction: column;
+      }
+      .summary {
+        margin-left: 0;
+        max-width: none;
+        width: 100%;
+      }
+    
+    }
+
+    @media (max-width: 700px) {
+      .cart-header-row th:nth-child(2),
+      .cart-row td:nth-child(2) {
+        display: none; /* ẩn checkbox ngoài cùng cho gọn */
+      }
+      .col-image {
+        width: 100px;
+      }
+
+  </style>
+</head>
+<body>
+	
+	<header class="  py-0" role="banner">
+
+      <div class="container-fluid site-navbar transparent ">
+        <div class="row align-items-center navbar">
+
+          <div class="col-6 col-xl-2 " data-aos="fade-down" >
+  <h1 class="mb-0"><a href="index.html" class="text-dark h2 mb-0">noiré&nbsp;&nbsp;</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block " data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center  " role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block  ">
+                <li class="active"><a href="index.html">home</a></li>
+                <li class="has-children">
+                  <a href="single.html">shop</a>
+                  <ul class="dropdown">
+                    <li><a href="#">new arrivals</a></li>
+                    <li><a href="#">all</a></li>
+                    <li><a href="#">top</a></li>
+                    <li><a href="#">coat</a></li>
+                    <li><a href="#">bottom</a></li>
+                    <li><a href="#">dress</a></li>
+                    <li><a href="#">others</a></li>
+                    <li class="has-children">
+                      <a href="#">accessories</a>
+                      <ul class="dropdown">
+                        <li><a href="#">hat</a></li>
+                        <li><a href="#">socks</a></li>
+       
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="services.html">perfume</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+         <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+    <div class="d-none d-xl-inline-block">
+        <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            <li>
+                <a href="cart.html.html" class="pl-0 pr-3">
+                    <!-- SVG giỏ hàng -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="pl-3 pr-3">
+                    <!-- SVG user -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+      </div>
+      
+    </header>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+     
+
+    <!-- CART TITLE -->
+   <section style="padding:80px 0 40px; text-align:center;">
+  <h2>Cart</h2>
+</section>
+
+    <!-- CART TABLE -->
+    <table class="cart-table">
+      <thead>
+        <tr class="cart-header-row">
+          <th class="col-select"><input type="checkbox"></th>
+          <th class="col-select"></th>
+          <th>Product</th>
+          <th class="col-qty">Qty</th>
+          <th class="col-price">Product Subtotal</th>
+          <th class="col-discount">Discount</th>
+          <th class="col-actions">Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cart-row">
+          <td class="col-select">
+            <input type="checkbox">
+          </td>
+          <td class="col-image">
+            <!-- Thay src bằng hình thật nếu có -->
+            <img src="images/fashion3.jpg" alt="Sherpa Jacket" class="product-img">
+          </td>
+          <td>
+            <div class="product-info">
+              [Pre-order delivery on December 8th] SHERPA CLOUD JACKET NAVY
+            </div>
+          </td>
+          <td class="col-qty">
+            <div class="qty-input">
+              <button>-</button>
+              <input type="text" value="1">
+              <button>+</button>
+            </div>
+            <button class="btn-small">Edit</button>
+          </td>
+          <td class="col-price">
+            $123.00
+          </td>
+          <td class="col-discount">
+            -
+          </td>
+          <td class="col-actions">
+            <button class="btn-outline">Add to wishlist</button><br>
+            <button class="btn-outline btn-outline-danger">✕ Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+	  <!-- sp 2-->
+			  <table class="cart-table">
+				 <tbody>
+				<tr class="cart-row">
+				  <td class="col-select">
+					<input type="checkbox">
+				  </td>
+				  <td class="col-image">
+					<!-- Thay src bằng hình thật nếu có -->
+					<img src="images/fashion3.jpg" alt="Sherpa Jacket" class="product-img">
+				  </td>
+				  <td>
+					<div class="product-info">
+					  [Pre-order delivery on December 8th] SHERPA CLOUD JACKET NAVY
+					</div>
+				  </td>
+				  <td class="col-qty">
+					<div class="qty-input">
+					  <button>-</button>
+					  <input type="text" value="1">
+					  <button>+</button>
+					</div>
+					<button class="btn-small">Edit</button>
+				  </td>
+				  <td class="col-price">
+					$123.00
+				  </td>
+				  <td class="col-discount">
+					-
+				  </td>
+				  <td class="col-actions">
+					<button class="btn-outline">Add to wishlist</button><br>
+					<button class="btn-outline btn-outline-danger">✕ Delete</button>
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
+	  
+	  
+
+    <!-- DELETE DƯỚI CÙNG -->
+    <div class="delete-bottom-wrap">
+      <button class="btn-delete-bottom">✕ Delete All</button>
+    </div>
+
+    <!-- SUMMARY + CHECKOUT -->
+    <div class="cart-bottom">
+      <!-- khoảng trống bên trái cho giống layout -->
+      <div></div>
+
+      <div class="summary">
+        <div class="summary-row">
+          <span class="summary-label">Merchandise</span>
+          <span class="summary-value">$123.00</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">Total amount</span>
+          <span class="summary-value">$123.00</span>
+        </div>
+        <div class="summary-row">
+  <span class="summary-label">Estimated points</span>
+  <span class="summary-value">
+    <span style="display: inline-block; min-width: 110px; text-align: right; padding-right: 15px;">Up to $ 2.50</span>
+    <button class="summary-details-btn">Details</button>
+  </span>
+</div>
+
+        <div class="checkout-row">
+          <button class="btn-checkout-selected">Checkout selected</button>
+          <button class="btn-checkout">Checkout</button>
+        </div>
+
+        <div class="payment-btns">
+          <button class="paypal-btn">
+            PayPal
+          </button>
+          <button class="stripe-btn">
+            Card payment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+	<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".site-navbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+</body>
+</html>

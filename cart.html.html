@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>noiré-Cart  </title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">    	
+<style>
+body { background:#F3E9E9 !important; font-family:"Poppins",sans-serif !important; color:#2a2a2a; }
+.page-wrapper { background:#ffffffd0; backdrop-filter:blur(6px); border-radius:24px; padding:60px; box-shadow:0 8px 30px rgba(0,0,0,0.06); }
+h2 { font-size:38px; font-weight:600; letter-spacing:1px; color:#0E1327; }
+.cart-table { border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.05); margin-bottom:40px; }
+.cart-header-row { background:#F7DCE0; color:#6b6b6b !important; }
+.cart-row { transition:0.4s ease; }
+.cart-row:hover { background:#fdf3f5; }
+.product-img { border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+.btn-small, .btn-outline, .btn-delete-bottom, .btn-checkout, .btn-checkout-selected {
+ border-radius:8px; border-width:1px; font-weight:500; transition:.3s; }
+.btn-small:hover, .btn-outline:hover, .btn-checkout:hover, .btn-checkout-selected:hover {
+ background:#F5B5C6; border-color:#F5B5C6; color:white !important; }
+.summary { background:#ffffffea; padding:24px; border-radius:18px; box-shadow:0 10px 25px rgba(0,0,0,0.07); }
+.summary-value { font-weight:600; }
+.paypal-btn, .stripe-btn { border-radius:10px; font-weight:600; }
+.scroll-fade { opacity:0; transform:translateY(40px); transition:all 0.8s ease-out; }
+.scroll-fade.show { opacity:1; transform:translateY(0); }
+	.cart-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* LEFT — PRODUCTS */
+.cart-left {
+    flex: 0 0 68%;
+}
+	.container {padding-top: 80px}
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #ffffffd8;
+    padding: 18px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    gap: 18px;
+}
+.cart-left-wrapper {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(50px);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    width: 100%;
+    margin-top: 40px;
+}
+
+.item-check {
+    width: 18px;
+    height: 18px;
+}
+
+.item-img {
+    width: 110px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.item-price {
+    color: #555;
+    font-size: 15px;
+}
+
+.qty-controller {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #F3E9E9;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.qty-number {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.item-total {
+    width: 120px;
+    text-align: right;
+    font-weight: 600;
+}
+
+.remove-btn {
+    background: transparent;
+    border: 1px solid #999;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* RIGHT — SUMMARY */
+.cart-right {
+    flex: 0 0 30%;
+}
+
+.summary-box {
+    background: #ffffffd8;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 100px;
+}
+
+.summary-value {
+    float: right;
+    font-weight: 600;
+}
+
+.checkout-btn,
+.btn-checkout-selected {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 500;
+
+    background: #F5B5C6;
+    color: #fff;
+    border: none;
+    transition: all .3s ease;
+    letter-spacing: .5px;
+}
+
+.checkout-btn:hover,
+.btn-checkout-selected:hover {
+    background: #e89bae;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(245, 181, 198, 0.4);
+}
+
+
+.remove-btn,
+.btn-outline {
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid #d1b5b5;
+    background: #fff;
+    color: #444;
+    transition: .25s;
+}
+
+.remove-btn:hover,
+.btn-outline:hover {
+    background: #f7dbe1;
+    border-color: #e8b8c3;
+    color: #000;
+}
+	a {color:#fff;} 
+	a:hover {color: #F3E9E9}
+	
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: #F3E9E9; /* để không bị trong suốt */
+}
+
+
+
+
+	
+	
+</style>
+	
+</head>
+<body class="cart">
+	<header class="  py-0" role="banner" >
+
+      <div class="container-fluid site-navbar transparent ">
+        <div class="row align-items-center navbar">
+
+          <div class="col-6 col-xl-2 " data-aos="fade-down" >
+   <h1 class="mb-0"><a href="index.html" class="text-dark h2 mb-0">noiré&nbsp;&nbsp;</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block " data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center  " role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block  ">
+                <li class="active"><a href="index.html">home</a></li>
+                <li class="has-children">
+                  <a href="Shop.html.html">shop</a>
+                  <ul class="dropdown">
+                    <li><a href="New Arrival.html.html">new arrivals</a></li>
+                    <li><a href="Best Item.html.html">best items</a></li>
+                    <li><a href="Top.html.html">top</a></li>
+                    <li><a href="Outer.html.html">outer</a></li>
+                    <li><a href="Bottom.html.html">bottom</a></li>
+                    <li><a href="Dress.html.html">dress</a></li>
+                    <li><a href="Acc.html.html">accessories</a></li>
+                    
+                  </ul>
+                </li>
+                 <li><a href="about.html">about</a></li>
+            <li><a href="lookbook.html">lookbook</a></li>
+			<li><a href="Event.html.html">event</a></li>
+              </ul>
+            </nav>
+          </div>
+
+         <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+    <div class="d-none d-xl-inline-block">
+        <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+            <li>
+                <a href="cart.html.html" class="pl-0 pr-3">
+                    <!-- SVG giỏ hàng -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </li>
+            <li>
+                <a href="login.html" class="pl-3 pr-3">
+                    <!-- SVG user -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+      </div>
+      
+    </header>
+
+<div class="container ">
+  <div class="cart-container cart-left-wrapper ">
+    
+    <!-- LEFT SIDE: PRODUCT LIST -->
+    <div class="cart-left">
+
+        <h2>Your Cart</h2>
+
+        <div class="cart-item">
+            <input type="checkbox" class="item-check" checked>
+
+            <img src="images/Top/BAMBI SOFT TOP LIGHT GREY $55.00.jpg" class="item-img">
+
+            <div class="item-info">
+                <h4 class="item-title">Bambi Soft Top Light Grey</h4>
+                <p class="item-price">280,000₫</p>
+
+                <div class="qty-controller">
+                    <button class="qty-btn minus">−</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+
+            <div class="item-total">280,000₫</div>
+
+            <button class="remove-btn">Wishlist</button>
+        </div>
+ <div class="cart-item">
+            <input type="checkbox" class="item-check" checked>
+
+            <img src="images/Acc/TWITTY MIXED CHECK BAG $57.00.jpg" class="item-img">
+
+            <div class="item-info">
+                <h4 class="item-title">TWITTY MIXED CHECK BAG</h4>
+                <p class="item-price">57.000₫</p>
+
+                <div class="qty-controller">
+                    <button class="qty-btn minus">−</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+
+            <div class="item-total">57,000₫</div>
+
+            <button class="remove-btn">Wishlist</button>
+        </div>
+
+        <!-- bạn có thể duplicate cart-item -->
+    </div>
+
+
+
+    <!-- RIGHT SIDE: ORDER SUMMARY -->
+    <div class="cart-right">
+        <div class="summary-box">
+            <h3>Order Summary</h3>
+
+            <p>Subtotal: <span class="summary-value" id="subtotal">337,000₫</span></p>
+            <p>Shipping: <span class="summary-value">Free</span></p>
+
+            <hr>
+
+            <h4>Total: <span class="summary-value" id="total">337,000₫</span></h4>
+
+            <button class="checkout-btn"><a href="thanhtoan.html">Checkout</a></button>
+        </div>
+    </div>
+
+</div>
+
+</div>
+ <script src="js/lookbook_jquery.js"></script>
+  <script src="js/turn.js"></script>
+  <script>
+    $(".flipbook").turn();
+  </script>
+		<script>
+const slider = document.getElementById("instaSlider");
+
+slider.addEventListener("mouseenter", () => {
+    slider.querySelector(".slide-track").style.animationPlayState = "paused";
+});
+
+slider.addEventListener("mouseleave", () => {
+    slider.querySelector(".slide-track").style.animationPlayState = "running";
+});
+</script>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".site-navbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/lightgallery-all.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
+
+  <script src="js/main.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+<script>
+const scrollers=document.querySelectorAll(".scroll-fade");
+function handleScroll(){ scrollers.forEach(el=>{ if(el.getBoundingClientRect().top < window.innerHeight-60){ el.classList.add("show"); }}); }
+window.addEventListener("scroll",handleScroll); handleScroll();
+</script>
+</body>
+</html>

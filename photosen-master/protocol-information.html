@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noiré - Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .brand-name {
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #222;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .protocol-info {
+            margin-bottom: 30px;
+        }
+        
+        .field {
+            margin-bottom: 20px;
+        }
+        
+        .field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        
+        .field-value {
+            color: #0066cc;
+            word-break: break-all;
+            margin-bottom: 5px;
+        }
+        
+        .link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 25px 0;
+        }
+        
+        .address-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .required::after {
+            content: " **";
+            color: #ff0000;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .select-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 14px;
+        }
+        
+        .checkbox-group {
+            margin: 25px 0;
+        }
+        
+        .checkbox-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .checkbox-item input {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .checkbox-item label {
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .terms-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        
+        .terms-section h4 {
+            margin-bottom: 15px;
+            color: #222;
+        }
+        
+        .terms-checkbox {
+            margin-bottom: 10px;
+			
+        }
+		
+		.underline-input {
+    border: none;
+    border-bottom: 1px solid #333;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.underline-input:focus {
+    border-bottom-color: #0066cc;
+    border-bottom-width: 2px;
+}
+		    .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #222;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #333;
+        }
+        a {text-decoration: none; color:#000000} 
+    </style>
+</head>
+<body>
+<div class="container">
+  <header>
+           <a href="index.html"><div class="brand-name">noiré</div></a> 
+           
+    </header>
+        
+    <main>
+        <h2>Personal&nbsp;Information</h2>
+            
+        <div class="protocol-info">
+           <div class="form-group">
+    <label>Email</label>
+    <input type="text" class="underline-input" placeholder="example@email.com">
+</div>
+
+<div class="form-group">
+    <label>Password</label>
+    <input type="password" class="underline-input" placeholder="Enter your password">
+</div>
+			<div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="underline-input" placeholder="Enter your password">
+</div>
+                
+              
+                
+        </div>
+            
+        <hr>
+            
+        <div class="address-section">
+            <h3>Centre Prasseur <span class="required"></span></h3>
+                
+            <div class="form-group">
+                <label class="required">Address</label>
+                <input type="text" class="form-control" placeholder="Address **">
+            </div>
+                
+            <div class="form-group">
+                <label>Country/Region</label>
+                <select class="select-control">
+                    <option>Viet Nam (+84)</option>
+                </select>
+            </div>
+                
+            <div class="form-group">
+                <label>Address Line 1</label>
+                <input type="text" class="form-control">
+            </div>
+                
+            <div class="form-group">
+                <label class="required">Mobile Phone</label>
+                <input type="text" class="form-control" placeholder="Mobile Phone ***">
+            </div>
+                
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                    <input type="checkbox" id="terms1">
+                  <label for="terms1">I have agree to all the Terms of Use.</label>
+                </div>
+                    
+                 
+            </div>
+                
+            <div class="terms-section">
+                <h4>The Terms of Conditions Required</h4>
+                    
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms3">
+                    <label for="terms3">Terms and Conditions</label>
+                </div>
+                    
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms4">
+                    <label for="terms4">Collection use of Personal Information</label>
+                </div>
+                    
+                <div class="terms-checkbox">
+                    <input type="checkbox" id="terms5">
+                    <label for="terms5">Agree to receive shopping information</label>
+                </div>
+                    
+                 
+            </div>
+        </div>
+    </main><br>
+
+	<button class="btn">sign up</button>
+  </div>
+</body>
+</html>
