@@ -2826,12 +2826,5 @@ html, body {
     text-align: center;
   }
 }
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-  }
-  .nav-menu.open {
-    display: flex;
-  }
-}
+
 
